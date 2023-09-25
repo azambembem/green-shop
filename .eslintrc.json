@@ -23,7 +23,8 @@
     "rules": {
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/quotes": ["error", "double", {"avoidEscape": true}],
-        "@typescript-eslint/semi": "off"
+        "@typescript-eslint/semi": "off",
+        "@typescript-eslint/naming-convention":"off"
 
     }
 }
