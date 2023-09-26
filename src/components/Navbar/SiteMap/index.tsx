@@ -13,8 +13,8 @@ const SiteMap: FC = () => {
   return (
     <Modal open={true} title="Site map" footer={false}>
       <div className="flex gap-4 flex-col mt-5">
-        <h3 className={`${custom_link_style} ${lint_active_style}`}>Home</h3>
-        <h3 className={`${custom_link_style} ${lint_hover_style}`}>Blog</h3>
+        <h3 className={` ${lint_active_style} ${custom_link_style}`}>Home</h3>
+        <h3 className={` ${lint_hover_style} ${custom_link_style}`}>Blog</h3>
       </div>
       <button className="w-[80%] m-auto flex gap-3 items-center justify-center bg-[#46A358] h-[49px] text-[white] font-medium text-[16px] mt-[41px] rounded-md">
         <LoginOutlined /> Login
