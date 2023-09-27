@@ -7,9 +7,13 @@ import {
   MenuOutlined,
 } from "@ant-design/icons";
 import SiteMap from "./SiteMap";
+import { useReduxDispatch } from "../../hooks/useRedux";
+import { setSiteMapModalVisibility } from "../../redux/modalSlice";
 
 const Navbar: FC = () => {
+  const dispatch = useReduxDispatch();
   const icon_style: string = "cursor-pointer text-[20px]";
+
   return (
     <div className="w-[80%] m-auto flex justify-between items-center h-[90px] border-b border-[#46A35880]">
       <SiteMap />
@@ -23,16 +27,19 @@ const Navbar: FC = () => {
         <h3 className="cursor-pointer">Home</h3>
         <h3 className="cursor-pointer">Blog</h3>
         <div />
-        <div className="flex gap-[30px] items-center">
-          <SearchOutlined className={`${icon_style}`} />
-          <BellOutlined className={`${icon_style}`} />
-          <ShoppingCartOutlined className={`${icon_style}`} />
-          <button className="text-white w-[100px] h-[35px] bg-[#46A358] flex justify-center items-center rounded-md gap-2 max-md:hidden">
-            <LoginOutlined />
-            Login
-          </button>
-          <MenuOutlined className={`${icon_style} hidden max-md:flex`} />
-        </div>
+      </div>
+      <div className="flex gap-[30px] items-center">
+        <SearchOutlined className={`${icon_style}`} />
+        <BellOutlined className={`${icon_style}`} />
+        <ShoppingCartOutlined className={`${icon_style}`} />
+        <button className="text-white w-[100px] h-[35px] bg-[#46A358] flex justify-center items-center rounded-md gap-2 max-md:hidden">
+          <LoginOutlined />
+          Login
+        </button>
+        <MenuOutlined
+          onClick={() => dispatch(setSiteMapModalVisibility())}
+          className={`${icon_style} hidden max-md:block`}
+        />
       </div>
     </div>
   );
