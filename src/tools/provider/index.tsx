@@ -28,7 +28,6 @@ const ProviderConf: FC<ProviderProps> = ({ children }) => {
           </QueryClientProvider>
         </ConfigProvider>
       </BrowserRouter>
-      ;
     </AuthProvider>
   );
 };
