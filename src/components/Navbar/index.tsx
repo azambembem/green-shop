@@ -15,7 +15,7 @@ const Navbar: FC = () => {
   const icon_style: string = "cursor-pointer text-[20px]";
 
   return (
-    <div className="w-[80%] m-auto flex justify-between items-center h-[90px] border-b border-[#46A35880]">
+    <div className=" flex justify-between items-center h-[90px] border-b border-[#46A35880]">
       <SiteMap />
       <div>
         <img
