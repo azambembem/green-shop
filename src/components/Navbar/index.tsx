@@ -6,7 +6,7 @@ import {
   BellOutlined,
   MenuOutlined,
 } from "@ant-design/icons";
-import SiteMap from "./SiteMap";
+import SiteMap from "../ModalVisibility/Modals/SiteMap";
 import { useReduxDispatch } from "../../hooks/useRedux";
 import { setSiteMapModalVisibility } from "../../redux/modalSlice";
 
