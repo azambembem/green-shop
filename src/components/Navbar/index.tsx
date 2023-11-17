@@ -8,13 +8,17 @@ import {
 } from "@ant-design/icons";
 
 import { useReduxDispatch } from "../../hooks/useRedux";
-
 import {
   setAuthModalVisibility,
   setSiteMapModalVisibility,
 } from "../../redux/modalSlice";
+import { useAuthUser, useIsAuthenticated } from "react-auth-kit";
+import { UserType } from "../../@types";
+import { log } from "console";
 
 const Navbar: FC = () => {
+  const isAuthed = useIsAuthenticated()();
+  const auth: UserType = useAuthUser()() ?? {};
   const dispatch = useReduxDispatch();
   const icon_style: string = "cursor-pointer text-[20px]";
 
@@ -41,8 +45,14 @@ const Navbar: FC = () => {
           }}
           className="text-white w-[100px] h-[35px] bg-[#46A358] flex justify-center items-center rounded-md gap-2 max-md:hidden"
         >
-          <LoginOutlined />
-          Login
+          {isAuthed ? (
+            `${String(auth.name)}`
+          ) : (
+            <>
+              <LoginOutlined />
+              Login
+            </>
+          )}
         </button>
         <MenuOutlined
           onClick={() => dispatch(setSiteMapModalVisibility())}
